@@ -1,0 +1,22 @@
+require: rubocop-rails
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'config/**/*'
+    - 'config.ru'
+    - 'Rakefile'
+    - 'bin/**/*'
+    - 'db/schema.rb'
+Metrics/BlockLength:
+  AllowedMethods: ['describe', 'context']
+Metrics/MethodLength:
+  CountAsOne: ['heredoc']
+Rails/Output:
+  Exclude:
+    - 'db/seeds.rb'
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Naming/VariableNumber:
+  Enabled: false
