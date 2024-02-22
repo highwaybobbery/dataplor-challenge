@@ -14,7 +14,7 @@ class Node < ApplicationRecord
       # First encountered ancestor is root
       self.root_id ||= ancestor_id
 
-      # Last encoutered ancestor is lowest common ancestor
+      # Last encountered ancestor is lowest common ancestor
       self.lowest_common_ancestor = ancestor_id
     end
   end
@@ -22,7 +22,7 @@ class Node < ApplicationRecord
   def self.common_ancestor(node_a_id, node_b_id)
     common_ancestry = CommonAncestry.new(depth: nil, root_id: nil, lowest_common_ancestor: nil)
     # NOTE: To keep complexity of the sql down, we will execute two separate queries here.
-    # This may also help in the future, as we can cash the restult of each individual query.
+    # This may also help in the future, as we can cash the result of each individual query.
     node_a_ancestors = Node.find(node_a_id).ancestor_ids
     node_b_ancestors = Node.find(node_b_id).ancestor_ids
 

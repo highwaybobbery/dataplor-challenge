@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class MainController < ApplicationController
   def common_ancestor
     render json: Node.common_ancestor(common_ancestor_params['a'], common_ancestor_params['b'])

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'csv'
 puts 'Truncating Nodes and Birds Tables...'
 ActiveRecord::Base.connection.execute('TRUNCATE TABLE nodes, birds RESTART IDENTITY;')

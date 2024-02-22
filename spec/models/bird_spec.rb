@@ -8,7 +8,7 @@ RSpec.describe Bird, type: :model do
       end
     end
 
-    context 'when existing nodes have no birds in there descendants' do
+    context 'when existing nodes have no birds in their descendants' do
       let!(:node_a) { create(:node, id: 123, parent_id: nil) }
       let!(:node_b) { create(:node, id: 456, parent_id: 123) }
 
