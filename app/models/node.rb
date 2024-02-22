@@ -7,7 +7,7 @@ class Node < ApplicationRecord
 
   validates :parent_id, comparison: { other_than: :id }, allow_nil: true
 
-  CommonAncestry = Struct.new(:depth, :root_id, :lowest_common_ancestor, keyword_init: true) do
+  CommonAncestry = Struct.new(:root_id, :lowest_common_ancestor, :depth, keyword_init: true) do
     def add_ancestor(ancestor_id)
       # Initially nil
       self.depth ||= 0
