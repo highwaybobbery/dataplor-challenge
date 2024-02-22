@@ -14,13 +14,13 @@ This is a pretty standard rails app, but here are some quick links to the most i
 - [db/seeds.rb](db/seeds.rb) - Data loader for getting the provided data into the database
 
 ### Getting Started
-The Application shouldn't need anything more than a relatively recent build of Postgres and Ruby 3.3.0
+The Application shouldn't need anything more than a relatively recent build of Postgres (I'm on 14.5) and Ruby 3.3.0
 
 Pull down the repo and run these commands to get started:
 ```
 bundle install
 bundle exec rake db:create db:migrate db:seed
-bundle exec rail s
+bundle exec rails s
 ```
 
 NOTE: The `db:seed` task will truncate both tables to allow for inserting records with specific Ids
