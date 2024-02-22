@@ -50,20 +50,25 @@ describe Node do
     end
 
     it "returns an array of all descendants' ids for a given node" do
-      expect(Node.all_descendant_ids([root_node.id])).to eq [root_node.id, depth_1_node.id, other_depth_1_node.id,
-                                                             depth_2_node.id]
+      expect(Node.all_descendant_ids([root_node.id])).to eq(
+        [root_node.id, depth_1_node.id, other_depth_1_node.id, depth_2_node.id]
+      )
     end
 
     it 'returns all descendants of multiple unrelated nodes' do
-      expect(Node.all_descendant_ids([depth_1_node.id,
-                                      other_depth_1_node.id])).to eq [depth_1_node.id, other_depth_1_node.id,
-                                                                      depth_2_node.id]
+      result = Node.all_descendant_ids(
+        [depth_1_node.id, other_depth_1_node.id]
+      )
+
+      expect(result).to eq [depth_1_node.id, other_depth_1_node.id, depth_2_node.id]
     end
 
     it 'does not return duplicates when given nodes that are ancestors' do
-      expect(Node.all_descendant_ids([root_node.id,
-                                      depth_1_node.id])).to eq [root_node.id, depth_1_node.id, other_depth_1_node.id,
-                                                                depth_2_node.id]
+      result = Node.all_descendant_ids([root_node.id, depth_1_node.id])
+
+      expect(result).to eq(
+        [root_node.id, depth_1_node.id, other_depth_1_node.id, depth_2_node.id]
+      )
     end
   end
 

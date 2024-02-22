@@ -6,7 +6,7 @@ class MainController < ApplicationController
   end
 
   def birds
-    render json: Bird.for_all_descendants_of(params[:node_ids].split(','))
+    render json: Bird.for_all_descendants_of(birds_params['node_ids'].split(','))
   end
 
   private
